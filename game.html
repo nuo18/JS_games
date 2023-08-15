@@ -1,0 +1,49 @@
+<!--Using Live Server extension
+    To access the console, Ctrl+Shift+I-->
+
+<html>
+    <canvas id="gameCanvas", width="800", height="800">
+        <!--Creating Game Canvas-->
+    </canvas>
+
+    <script>
+        var canvas;
+        var canvasContext;
+        //Ball movement
+        var ballX = 50;
+
+        //window.onload == Runs the code when the page is loaded
+        window.onload = function() {
+            console.log("Hello, World");
+            //Getting canvas and storing it in var
+            canvas = document.getElementById('gameCanvas');
+            canvasContext = canvas.getContext('2d');
+            //Calling drawEverything
+            var freamesPerSecond = 30;
+            setInterval(function() {
+            movement();
+            drawEverything();
+            }, 1000/freamesPerSecond);
+        }
+
+        //Movement code
+        function movement() {
+            //Ball Speed
+            ballX = ballX + 5;
+        }
+
+        function drawEverything(){
+            //X, Y, Width, Height
+            //Canvas
+            canvasContext.fillStyle = 'black';
+            canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+            //Ball
+            canvasContext.fillStyle = 'red';
+            canvasContext.fillRect(ballX, 200, 10, 10)
+
+            //Paddle1
+            canvasContext.fillStyle = 'white';
+            canvasContext.fillRect(10, 400, 10, 100);
+        }
+    </script>
+</html>
