@@ -1,2 +1,2 @@
 # JS_games
-Simple HTML Javascript games I am learning.
+A bunch of javascript games I will be developing and learning over time.
